@@ -14,7 +14,22 @@ const TaskList = () => {
       const taskUpdate = [task, ...tasks];      
       setTasks(taskUpdate);
     }
-  }
+  };
+
+  const deleteTask = (id) => {
+    const taskUpdate = tasks.filter(task => task.id !== id);
+    setTasks(taskUpdate);
+  };
+
+  const completedTask = (id) => {
+    const taskUpdate = tasks.map(task => {
+      if (task.id === id) {
+        task.completed = !task.completed;
+      }
+      return task;
+    })
+    setTasks(taskUpdate);
+  };
 
   return (
     <>
@@ -28,6 +43,8 @@ const TaskList = () => {
               id={task.id}
               text={task.text}
               completed={task.completed}
+              completedTask={completedTask}
+              deleteTask={deleteTask}
               />
             );
           })

@@ -8,7 +8,7 @@ const TaskForm = (props) => {
   const handleChange = (e) => {
     const elem = e.target;
     setInput(elem.value);
-  }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -18,7 +18,7 @@ const TaskForm = (props) => {
       completed: false
     }
     props.onSubmit(taskNew)
-  }
+  };
 
   return (
     <form className='task-form'

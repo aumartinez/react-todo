@@ -12,7 +12,7 @@
   cursor: pointer;
 }
 
-.task-container.task-completed {
+.task-container.completed {
   background-color: #5101a7;
   text-decoration: line-through;
 }
